@@ -39,7 +39,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 350px;
+    height: auto;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -72,41 +72,44 @@ font-weight: bold;
     letter-spacing: 1px;
 }
 
-/* Hero Section */
 .hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    text-align: left;
-    padding: 0 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  padding: 40px 5vw;
+  gap: 20px;
+  flex-wrap: nowrap;
 }
 
-.introduction{
-    font-size: 1.5rem;
-    margin-left:0.8rem;
+.hero .container {
+  width: 60%;
+}
+
+.hero img {
+  width: 35%;
+  max-width: 578px;
+  height: auto;
+  flex-shrink: 0;
 }
 
 .hero-title {
-    font-size: 9rem;
-    font-weight: 100;
-    line-height: 1;
+  font-size: 10rem;
+  font-weight: 100;
+  line-height: 1.1;
 }
 
 .hero-subtitle {
-    display: flex;
-    align-items: flex-end;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--secondary);
-    max-width: 600px;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  max-width: 100%;
+  color: var(--secondary);
 }
 
-/* Hero Text Animation */
-.hero-title {
-    animation: swoshIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    opacity: 0;
-    transform: translateX(-100px);
+.introduction {
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
+
 
 .hero-subtitle {
     animation: swoshIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
@@ -236,8 +239,54 @@ h2 {
     .competence-grid {
       grid-template-columns: 1fr;
     }
+
+    .hero-title{
+      font-size: 2rem;
+    }
+
+    .hero-subtitle{
+      font-size: 0.6rem;
+    }
+
+    .nav-links{
+      font-size: 70%;
+    }
+
+    
   }
   
+  @media (max-width: 768px) {
+    .swiper-container {
+      padding: 0 10px;
+    }
+  
+    .swiper-slide {
+      max-width: 90%;
+      margin-right: 10px;
+    }
+  
+    .swiper-button-next,
+    .swiper-button-prev {
+      font-size: 16px;
+      top: auto;
+      bottom: 0;
+      transform: none;
+      margin: 10px;
+      position: relative;
+    }
+  
+    .swiper-button-prev {
+      margin-right: 20px;
+    }
+  
+    .swiper-button-next {
+      margin-left: 20px;
+    }
+
+section {
+  padding: 50px 0;
+  border-bottom: 1px solid #eee;
+}
 
 /* Contact Form */
 .contact-form {
@@ -282,3 +331,4 @@ footer {
   margin: 15px 0;
   color: #555;
 }
+
