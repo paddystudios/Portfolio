@@ -4,6 +4,11 @@
     --secondary: #333333;
     --accent: #555555;
     --light: #f8f8f8;
+
+    /* Default font sizes */
+    --font-size-base: 16px;
+    --font-size-mobile: 14px;
+    --font-size-tablet: 15px;
 }
 
 html, body {
@@ -11,6 +16,36 @@ html, body {
     max-width: 100%;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove 40px and 5vw on mobile and tablet */
+@media (max-width: 1024px) {
+    .your-element { /* Replace with the actual class or element */
+        margin: 0;
+        padding: 0;
+    }
+}
+/* Modern Reset & Base Styles */
+:root {
+    --primary: #000000;  /* Black for minimalist look */
+    --secondary: #333333;
+    --accent: #555555;
+    --light: #f8f8f8;
+
+    /* Default font sizes */
+    --font-size-base: 16px;
+    --font-size-mobile: 14px;
+    --font-size-tablet: 15px;
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 
 * {
     margin: 0;
@@ -18,11 +53,73 @@ html, body {
     box-sizing: border-box;
 }
 
+/* Remove 40px and 5vw on mobile and tablet */
+@media (max-width: 1024px) {
+    .your-element { /* Replace with the actual class or element */
+        margin: 0;
+        padding: 0;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    /* Modern Reset & Base Styles */
+    :root {
+        --primary: #000000;  /* Black for minimalist look */
+        --secondary: #333333;
+        --accent: #555555;
+        --light: #f8f8f8;
+    
+        /* Default font sizes */
+        --font-size-base: 16px;
+        --font-size-mobile: 14px;
+        --font-size-tablet: 15px;
+    }
+    
+    html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Space Grotesk', sans-serif;
+        color: var(--primary);
+        background-color: white;
+    }
+    
+    /* Responsive Styles for Mobile */
+    @media (max-width: 768px) {
+        header {
+            width: 100%; /* Expand header to full width */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+        }
+    
+        header img {
+            width: 100%; /* Make the header image take full width */
+            height: auto; /* Maintain aspect ratio */
+        }
+    
+        header .name {
+            font-size: 1.5rem; /* Adjust font size for the name */
+            text-align: center; /* Center-align the name */
+            margin: 0; /* Remove margins */
+            padding: 0; /* Remove padding */
+        }
+    }
+}
+
 body {
-    font-family: 'Space Grotesk';
+    font-family: 'Space Grotesk', sans-serif;
     color: var(--primary);
     background-color: white;
-
+    font-size: var(--font-size-base);
 }
 
 .container {
@@ -78,7 +175,6 @@ font-weight: bold;
   justify-content: space-between;
   align-items: center;
   height: auto;
-  padding: 40px 5vw;
   gap: 20px;
   flex-wrap: nowrap;
 }
@@ -97,7 +193,7 @@ font-weight: bold;
 .hero-title {
   font-size: 10rem;
   font-weight: 100;
-  line-height: 1.1;
+  line-height: 0.9;
 }
 
 .hero-subtitle {
@@ -131,6 +227,13 @@ font-weight: bold;
 .swiper-container {
     padding-right: 100px; /* Space to show part of next slide */
     overflow: visible;
+
+  }
+  .swiper-navigation {
+    margin-top: 20px; /* Add space between the carousel and arrows */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
   
   .swiper-slide {
